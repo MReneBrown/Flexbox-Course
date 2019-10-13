@@ -19,39 +19,63 @@
             width: calc(100vw - 20px);
             border: 10px solid red;
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            /* align-items: center; */
+            align-items: center;
         }
-        /* If you remember back to the last guide if I remove this column definition 
-        and just went with the default of row and in fact lets just change it to row 
-        just so you can see that it's clearly using this row style here. We got that 
-        very odd behavior where everything just got squished up together. The reason 
-        for this is it deals directly because we're using two flex containers here 
-        and so we are not able to use a row if we have a row used up here in our 
-        container. So we have this nested containers situation where we have 1 flex 
-        container that holds another flex container. If we use row and then the 
-        combination of all these other styles here then we're going to end up with a 
-        very odd page. So the way to fix this is to change the Flex direction here. 
-         instead of using the default row now we can say column and if I save this 
-         now you can see we get the behavior that you'd expect.*/
-
-        .container > .img-blocks {
+    
+        .blocks {
             display: flex;
-            flex-direction: row;
-            justify-content: center; /*options: flex-start(beginning of container), 
-            flex-end(end of container), space-between(evenly space between items but 
-            to edges of container), space-around(evenly spaced including area around 
-            edges of container), center*/
+            justify-content: center;
+            align-items: center;
+            width: 1000px;
         }
+
+        .block {
+            background-color: cadetblue;
+            height: 200px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block1 {
+            flex-basis: 400px;
+        }
+
+        .block2 {
+            flex-basis: 100px;
+        }
+
+        .block3 {
+            flex-basis: 200px;
+        }
+        /* Now the very neat thing with how this works. And this is part 
+        of the reason why the entire flex box tool is used for responsive 
+        development is if I were to shrink(in browser)this back and if 
+        I were to grow it and shrink it what you will see is that our boxes 
+        are dynamically changing but they're dynamically changing so as they 
+        shrink and grow they are changing with these as starting points.
+
+        So as it shrinks, 400 pixels may not end up being 400 pixels, but 
+        it keeps the same aspect ratio. So imagine that it is not 400 pixels 
+        but it's just the property four, and then this is the property one, 
+        and then this is a property two. So what that means is that 1 is 
+        always going to be the largest. 2 is going to be a fourth of that 
+        size and 3 is going to be half of that size. So even when we shrink 
+        it down here and this is no longer four hundred pixels it is though 
+        as you can tell four times larger than our second box and it's twice 
+        as large as our third box because it maintains that ratio. So that 
+        is an introduction to the Flex property by working with flex basis.*/
+
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="img-blocks">
-            <img src="https://source.unsplash.com/random/150x150" alt="">
-            <img src="https://source.unsplash.com/random/150x150" alt="">
-            <img src="https://source.unsplash.com/random/150x150" alt="">
+        <div class="blocks">
+            <div class="block block1">1</div>
+            <div class="block block2">2</div>
+            <div class="block block3">3</div>
         </div>
     </div>
 </body>
