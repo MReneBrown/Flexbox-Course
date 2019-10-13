@@ -41,32 +41,44 @@
 
         .block1 {
             flex-basis: 400px;
+            /* flex-grow: 4; */
+            flex-shrink: 2;
         }
 
         .block2 {
             flex-basis: 100px;
+            /* flex-grow: 1; */
+            flex-shrink: 1;
         }
 
         .block3 {
             flex-basis: 200px;
+            /* flex-grow: 2; */
+            flex-shrink: 1;
         }
-        /* Now the very neat thing with how this works. And this is part 
-        of the reason why the entire flex box tool is used for responsive 
-        development is if I were to shrink(in browser)this back and if 
-        I were to grow it and shrink it what you will see is that our boxes 
-        are dynamically changing but they're dynamically changing so as they 
-        shrink and grow they are changing with these as starting points.
+        /* Flex grow is the property that defines the ratio of how 
+        fast one of the elements grows in relation to the other items. 
+        So when I say flex grow is 4 and let's remove the basis here 
+        for a second. When I say flex grow 4 this means that this element, 
+        this block 1, is going to grow 4 times faster than an element that 
+        for example number two here that has a flex grow of 1. Flex grow
+        does not use pixels but multiples. Flex grow is NOT used with flex basis. 
 
-        So as it shrinks, 400 pixels may not end up being 400 pixels, but 
-        it keeps the same aspect ratio. So imagine that it is not 400 pixels 
-        but it's just the property four, and then this is the property one, 
-        and then this is a property two. So what that means is that 1 is 
-        always going to be the largest. 2 is going to be a fourth of that 
-        size and 3 is going to be half of that size. So even when we shrink 
-        it down here and this is no longer four hundred pixels it is though 
-        as you can tell four times larger than our second box and it's twice 
-        as large as our third box because it maintains that ratio. So that 
-        is an introduction to the Flex property by working with flex basis.*/
+        With Flex shrink, you would have a flex basis for one of these 
+        items so I'm going to give flex basis. the flex basis of 400 pixels.
+        But when I said flex shrink is 2 this is going to then look at all 
+        the other properties its going to look at each one of the other 
+        flex box items here and it's going to say okay block number 1 is 
+        going to shrink twice as fast as all of the other element. So just 
+        like when we had flex grow we said 4 the 4 meant that we wanted 1 
+        to grow 4 times faster than the other items. Flex shrink says okay 
+        this needs to then shrink twice as fast or 2 times as fast as all 
+        of the other elements that would have a flex shrink of 1. So that 
+        is a very very important thing to keep in mind because if you apply 
+        flex-basis and you want this to be your largest item but then you 
+        apply flex shrink to it and you put the highest value on flex shrink 
+        then that item is going to shrink the fastest.*/
+
 
     </style>
 </head>
