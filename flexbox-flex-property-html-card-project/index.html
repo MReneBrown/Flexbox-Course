@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title></title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .container .item {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            border: 1px solid grey;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .container .item .content {
+            display: flex;
+        }
+
+        .container .item .content .metadata {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /*centers vertically*/
+            margin-left: 20px;
+            margin-right: 5px;
+        }
+
+        .container .item .content .metadata .title {
+            margin: 0px;
+        }
+        /*The reason why we had that little bit of margin down there 
+        at the bottom was because this H1 was actually overwriting it 
+        and it was pushing everything down. So when you say I just 
+        want to remove that then that fixes that.*/
+
+        .container .item .btn-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .container .item .btn-group .button {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            width: 42px;
+            justify-content: center;
+            font-size: 2em;
+        }
+
+        .container .item .btn-group .button a {
+            color: lightseagreen;
+            text-decoration: none;
+        }
+
+        .container .item .btn-group .button:hover {
+            background-color: lightslategrey;
+            cursor: pointer;
+        }
+
+        .container .item .btn-group .button:hover a {
+            color: white;
+        }
+
+        .item.featured {
+            flex: auto;  /* Auto is sized according to its h & w properties
+            but DOES grow to absorb any extra space in the flex container,
+            shrinks to it's minimum size to fit the container. (flex: 1 1 auto) */
+        }
+
+        .item.associated {
+            flex: initial; /* Initial is default value. Sized according to 
+            h & w properties. Shrinks to its minimum size to fit container, 
+            does NOT grow to absorb any free space in the flex container. 
+            (flex: 1 1 auto) */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class='container'>
+        <div class='item featured'>
+            <div class='content'>
+                <img src='https://d32xj74kbqkoqn.cloudfront.net/uploads/campsite/campsite_image/129/dissecting-rails-icon.jpg' width='200px' height='120px'>
+                <div class='metadata'>
+                    <h1 class='title'>My amazing title</h1>
+                    <h3>And a subtitle</h3>
+                </div>
+            </div>
+            <div class='btn-group'>
+                <div class='button'>
+                    <a href="#">
+                        <i class="fas fa-plus-circle"></i>
+                    </a>
+                </div>
+                <div class='button'>
+                    <a href="#">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class='item associated'>
+            <div class='content'>
+                <img src='https://d32xj74kbqkoqn.cloudfront.net/uploads/guide/video_image/43/foundations-video-thumb.jpg' width='200px' height='120px'>
+                <div class='metadata'>
+                    <h1 class='title'>Another amazing post</h1>
+                </div>
+            </div>
+            <div class='btn-group'>
+                <div class='button'>
+                    <a href="#">
+                        <i class="fas fa-plus-circle"></i>
+                    </a>
+                </div>
+                <div class='button'>
+                    <a href="#">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
